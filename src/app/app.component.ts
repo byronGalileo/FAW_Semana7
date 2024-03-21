@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { GradeListComponent } from "./components/grade-list/grade-list.component";
+import { PersonajesComponent } from "./components/personajes/personajes.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,GradeListComponent],
+  imports: [RouterOutlet,GradeListComponent,PersonajesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

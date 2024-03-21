@@ -14,18 +14,13 @@ import { Grados } from "../../models/grados.model"
 export class GradeListComponent {
   grados: Grados[] = [];
 
-  agregaI(){
-    const grado: Grados ={
-      celcius: 0,
-      fahrenheit: 32,
-    };
-   
-    this.grados.push(grado);
-  }
 
   addItem(newItem: Grados) {
     this.grados.push(newItem);
   }
 
+  eliminarRegistro(id: number) {
+    this.grados = this.grados.filter(grado => grado.id !== id);
+  }
   
 }

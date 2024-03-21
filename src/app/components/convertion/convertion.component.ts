@@ -16,6 +16,7 @@ import { Grados } from "../../models/grados.model"
 export class ConvertionComponent {
   numero = new FormControl();
   tipo   = new FormControl("");
+  id     = 0;
 
 
   @Output() newItemEvent = new EventEmitter<Grados>();
@@ -28,10 +29,10 @@ export class ConvertionComponent {
 
     if (tipo === 'celcius') {
         resultado = (valor * 9/5) + 32; // Conversión de Celsius a Fahrenheit
-        this.newItemEvent.emit(new Grados(valor, resultado));
+        this.newItemEvent.emit(new Grados(this.id ++,valor, resultado));
     } else if (tipo === 'fahrenheit') {
         resultado = (valor - 32) * 5/9; // Conversión de Fahrenheit a Celsius
-        this.newItemEvent.emit(new Grados(resultado, valor));
+        this.newItemEvent.emit(new Grados(this.id ++,resultado, valor));
     }
   }
 

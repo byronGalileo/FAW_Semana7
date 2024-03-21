@@ -4,6 +4,7 @@
         <table class="centered">
             <thead>
               <tr>
+                  <th>#</th>
                   <th>Celcius</th>
                   <th>Fahrenheit</th>
                   <th></th>
@@ -13,9 +14,10 @@
             <tbody>
                 @for (grado of grados; track grado.celcius) {
                     <tr style="align-items: center;">
+                        <td>{{ grado.id }}</td>
                         <td>{{ grado.celcius }}</td>
                         <td>{{ grado.fahrenheit }}</td>
-                        <i  class="material-icons">clear</i>
+                        <button (click)="eliminarRegistro(grado.id)"><i  class="material-icons" >clear</i></button>
                     </tr>
                 } @empty {
                     Empty list of colores
