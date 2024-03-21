@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ConvertionComponent } from "../convertion/convertion.component";
+import { Grados } from "../../models/grados.model"
 
-interface Grados {
-  celcius: number;
-  fahrenheit: number;
-}
 
 @Component({
   selector: 'app-grade-list',
@@ -15,4 +13,19 @@ interface Grados {
 })
 export class GradeListComponent {
   grados: Grados[] = [];
+
+  agregaI(){
+    const grado: Grados ={
+      celcius: 0,
+      fahrenheit: 32,
+    };
+   
+    this.grados.push(grado);
+  }
+
+  addItem(newItem: Grados) {
+    this.grados.push(newItem);
+  }
+
+  
 }
